@@ -4,7 +4,7 @@ from vehicleapp import views
 
 app_name = "vehicleapp"
 urlpatterns = [
-    path('',views.home, name="home"),
+    path('home/',views.home, name="home"),
     path('profile/', views.view_profile, name='view_profile'),
     path('login/', views.login_user, name='login'),
     path('logout/', logout, {'template_name':'vehicleapp/logout.html'}, name="logout"),

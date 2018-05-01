@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
  
-    path('', include('vehicleapp.urls', namespace='vehicleapp')),
+    path('vehicleapp/', include('vehicleapp.urls', namespace='vehicleapp')),
 
 ]
 
