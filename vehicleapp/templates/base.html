@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+{% block title %}
+<title>Home/title>
+{% endblock %}
+<meta charset="iso-8859-1">
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'vehicleapp/css/layout.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'vehicleapp/css/style.css' %}" type="text/css">
+<!--[if lt IE 9]><script src="{% static 'vechicleapp/js/html5shiv.js' %}"></script><![endif]-->
+</head>
+<body>
+<div class="wrapper row1">
+  <header id="header" class="clear">
+    <div id="hgroup">
+      <h1><a href="#">Vehicle Registration</a></h1>
+      
+    </div>
+    <nav>
+      <ul> 
+        <li><a href="{% url 'vehicleapp:home' %}">Home</a></li>        
+        <li><a href="{% url 'vehicleapp:about' %}">About</a></li>
+         {% if user.is_authenticated %}
+        <li><a href="{% url 'vehicleapp:register_vehicle' %}">RegisterVehicle</a></li> 
+        <li><a href="{% url 'vehicleapp:view_profile' %}">User: {{ user.get_username }}</a></li>
+        <li><a href="{% url 'vehicleapp:logout' %}?next={{request.path}}">Logout</a></li>   
+        {% else %}
+        <li><a href="{% url 'vehicleapp:create_account' %}">Register</a></li>
+        <li><a href="{% url 'vehicleapp:login' %}?next={{request.path}}">Login</a></li>   
+        {% endif %}       
+        
+      </ul>
+    </nav>
+  </header>
+</div>
+<!-- content -->
+{% block content %}
+<div class="wrapper row2">
+  <div id="container" class="clear">
+    <!-- Slider -->
+    <section id="slider" class="clear">
+      {% block section_slider %}
+      <figure><img src="{% static 'vehicleapp/images/demo/car' %}" alt="">
+        <figcaption>
+          <h2>Search for a Registered Vehicle</h2>
+          <p>Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna. Urnaultrices quis curabitur phasellentesque congue magnis vestibulum quismodo nulla et feugiat adipiscinia pellentum leo.</p>
+          <footer class="more"><a href="#">Read More &raquo;</a></footer>
+        </figcaption>
+      </figure>
+      {% endblock %}
+    </section>
+    <!-- main content -->
+    <div id="homepage">
+      <!-- services area -->
+      {% block service %}
+      <section id="services" class="clear">
+        {% block section_services %}
+        <!-- article 1 -->
+        <article class="one_third">
+          <h2>Lorum ipsum dolor</h2>
+          <img src="{% static 'vehicleapp/images/demo/80x80.gif' %}" alt="">
+          <p>Vestibulumaccumsan egestibulum eu justo convallis augue estas aenean elit intesque sed. Facilispede estibulum nulla orna nisl velit elit ac aliquat non tincidunt. Namjusto cras urna urnaretra lor urna neque sed quis orci nulla. Laoremut vitae doloreet condimentumst phasellentes dolor ut a ipsum id consectetus. Inpede cumst vitae ris tellentesque fring intesquet.</p>
+          <footer class="more"><a href="#">Read More &raquo;</a></footer>
+        </article>
+        <!-- article 2 -->
+        <article class="one_third">
+          <h2>Lorum ipsum dolor</h2>
+          <img src="{% static 'vehicleapp/images/demo/80x80.gif' %}" alt="">
+          <p>Vestibulumaccumsan egestibulum eu justo convallis augue estas aenean elit intesque sed. Facilispede estibulum nulla orna nisl velit elit ac aliquat non tincidunt. Namjusto cras urna urnaretra lor urna neque sed quis orci nulla. Laoremut vitae doloreet condimentumst phasellentes dolor ut a ipsum id consectetus. Inpede cumst vitae ris tellentesque fring intesquet.</p>
+          <footer class="more"><a href="#">Read More &raquo;</a></footer>
+        </article>
+        <!-- article 3 -->
+        <article class="one_third lastbox">
+          <h2>Lorum ipsum dolor</h2>
+          <img src="{% static 'vehicleapp/images/demo/80x80.gif' %}" alt="">
+          <p>Vestibulumaccumsan egestibulum eu justo convallis augue estas aenean elit intesque sed. Facilispede estibulum nulla orna nisl velit elit ac aliquat non tincidunt. Namjusto cras urna urnaretra lor urna neque sed quis orci nulla. Laoremut vitae doloreet condimentumst phasellentes dolor ut a ipsum id consectetus. Inpede cumst vitae ris tellentesque fring intesquet.</p>
+          <footer class="more"><a href="#">Read More &raquo;</a></footer>
+        </article>
+        {% endblock %}
+      </section>
+      {% endblock %}
+      <!-- / services area -->
+      <!-- ########################################################################################## -->
+      <!-- ########################################################################################## -->
+      <!-- ########################################################################################## -->
+      <!-- ########################################################################################## -->
+      <!-- One Quarter -->
+      {% block one_quarter %}
+      <section id="latest" class="last clear">
+        <article class="one_quarter">
+          <figure><img src="{% static 'vehicleapp/images/demo/215x100.gif' %}" width="215" height="100" alt="">
+            <figcaption>
+              <h2>Indonectetus facilis</h2>
+              <p>Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna.</p>
+              <footer class="more"><a href="#">Read More &raquo;</a></footer>
+            </figcaption>
+          </figure>
+        </article>
+        <article class="one_quarter">
+          <figure><img src="{% static 'vehicleapp/images/demo/215x100.gif' %}" width="215" height="100" alt="">
+            <figcaption>
+              <h2>Indonectetus facilis</h2>
+              <p>Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna.</p>
+              <footer class="more"><a href="#">Read More &raquo;</a></footer>
+            </figcaption>
+          </figure>
+        </article>
+        <article class="one_quarter">
+          <figure><img src="{% static 'vehicleapp/images/demo/215x100.gif' %}" width="215" height="100" alt="">
+            <figcaption>
+              <h2>Indonectetus facilis</h2>
+              <p>Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna.</p>
+              <footer class="more"><a href="#">Read More &raquo;</a></footer>
+            </figcaption>
+          </figure>
+        </article>
+        <article class="one_quarter lastbox">
+          <figure><img src="{% static 'vehicleapp/images/demo/215x100.gif' %}" width="215" height="100" alt="">
+            <figcaption>
+              <h2>Indonectetus facilis</h2>
+              <p>Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna.</p>
+              <footer class="more"><a href="#">Read More &raquo;</a></footer>
+            </figcaption>
+          </figure>
+        </article>
+      </section>
+      {% endblock %}
+      <!-- / One Quarter -->
+    </div>
+    <!-- / content body -->
+  </div>
+</div>
+
+{% endblock %}
+<!--Script-->
+<script>
+  // 2. This code loads the IFrame Player API code asynchronously.
+  var tag = document.createElement('script');
+
+  tag.src = "https://www.youtube.com/iframe_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  // 3. This function creates an <iframe> (and YouTube player)
+  //    after the API code downloads.
+  var player;
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+      height: '390',
+      width: '540',
+      videoId: 'UMCpCwkHmEg',
+      events: {
+        'onReady': onPlayerReady,
+        'onStateChange': onPlayerStateChange
+      }
+    });
+  }
+
+  // 4. The API will call this function when the video player is ready.
+  function onPlayerReady(event) {
+    event.target.playVideo();
+  }
+
+  // 5. The API calls this function when the player's state changes.
+  //    The function indicates that when playing a video (state=1),
+  //    the player should play for six seconds and then stop.
+  var done = false;
+  function onPlayerStateChange(event) {
+    if (event.data == YT.PlayerState.PLAYING && !done) {
+      setTimeout(stopVideo, 6000);
+      done = true;
+    }
+  }
+  function stopVideo() {
+    player.stopVideo();
+  }
+</script>
+<!-- Footer -->
+<div class="wrapper row3">
+  <footer id="footer" class="clear">
+    <p class="fl_left">Copyright &copy; 2012 - All Rights Reserved - <a href="#">Domain Name</a></p>
+    <p class="fl_right">Template by <a href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+  </footer>
+</div>
+</body>
+</html>

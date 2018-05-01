@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Profile</title>
+{% endblock %}
+
+{% block section_slider %}
+
+{% endblock %}
+
+{% block section_services %}
+<h2>Profile</h2>
+<p>
+<p><b>Username</b>: {{user}}</p>
+<p><b>First Name</b>: {{user.first_name}}</p>
+<p><b>Last Name</b>: {{user.last_name}}</p>
+<p><b>Email</b>: {{user.email}}</p>
+</p>
+
+<h2>Vehicle Details</h2>
+<p><b>Chasis Number</b>: {{user.ownerprofile.vehicledetail.chasis_no}}</p>
+<p><b>Licence Plate Number</b>: {{user.ownerprofile.vehicledetail.licence_plate_no}}</p>
+<p><b>Vehicle Make</b>: {{user.ownerprofile.vehicledetail.vehicle_make}}</p>
+
+
+
+
+
+{% endblock %}
+
+
+{% block one_quarter %}
+
+
+
+{% endblock %}
