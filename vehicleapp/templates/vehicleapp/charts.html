@@ -1,0 +1,77 @@
+
+
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Profile</title>
+{% endblock %}
+
+{% block section_slider %}
+
+{% endblock %}
+
+{% block section_services %}
+
+
+
+<h1>Chart showing Database Data</h1>
+
+
+
+
+{% endblock %}
+
+
+{% block one_quarter %}
+<canvas id="myChart" width="200" height="200"></canvas>
+<script>
+        var endpoint = 'api/vehiclemake'
+
+        
+        var owners,regv,makes;
+        $.ajax({
+            method:"GET",
+            url: endpoint,
+            success: function(data){
+            console.log(data);
+
+                console.log(data["count"]);
+                makes=data["count"];
+                var ctx = document.getElementById("myChart").getContext('2d');
+
+        var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ["Users", "Registered Vehicles", "Makes"],
+            datasets: [{
+                label: 'Entries',
+                data:[owners,regv,makes],
+            }]
+        }
+
+        })     
+
+
+              },
+            error: function(error_data){
+                console.log("error");
+                console.log(error_data);
+            }
+        })
+
+
+
+       
+        </script>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+

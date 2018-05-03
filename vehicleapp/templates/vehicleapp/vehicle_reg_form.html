@@ -15,7 +15,7 @@
         <hr>
         </p>
     
-    <form action="{% url 'vehicleapp:register_vehicle' %}" method="post">
+    <form action="{% url 'register_vehicle' %}" method="post">
         {% csrf_token %}
        
         {{ form.as_p}}

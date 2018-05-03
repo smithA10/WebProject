@@ -1,0 +1,66 @@
+/* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .list-columns {
+    -moz-column-count: 2;
+    -moz-column-gap: 60px;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 60px;
+    column-count: 2;
+    column-gap: 60px;
+    }
+ hr{
+     column-count: 2;
+ }
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      
+        
+    .divider{
+        position:absolute;
+        left:50%;
+        top:10%;
+        bottom:10%;
+        border-left:1px solid white;
+    }
+    input {
+        width: 375px;
+        display: block;
+        border: 1px solid #999;
+        height: 25px;
+        -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      textarea{
+        width: 375px;
+        height: 150px;
+        display: block;
+      }
+
+      label{
+          display: block;
+      }
+
+      .flex {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        
+        -webkit-flex-flow: row wrap;
+        justify-content: space-around;
+      }
+
+
+
+      
+
+      

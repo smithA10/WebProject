@@ -7,28 +7,36 @@
 <meta charset="iso-8859-1">
 
 {% load static %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" href="{% static 'vehicleapp/css/layout.css' %}" type="text/css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
 <link rel="stylesheet" href="{% static 'vehicleapp/css/style.css' %}" type="text/css">
+
 <!--[if lt IE 9]><script src="{% static 'vechicleapp/js/html5shiv.js' %}"></script><![endif]-->
 </head>
 <body>
 <div class="wrapper row1">
   <header id="header" class="clear">
     <div id="hgroup">
-      <h1><a href="#">Vehicle Registration</a></h1>
+      <h1><a href="#">VRS</a></h1>
       
     </div>
     <nav>
       <ul> 
-        <li><a href="{% url 'vehicleapp:home' %}">Home</a></li>        
-        <li><a href="{% url 'vehicleapp:about' %}">About</a></li>
-         {% if user.is_authenticated %}
-        <li><a href="{% url 'vehicleapp:register_vehicle' %}">RegisterVehicle</a></li> 
-        <li><a href="{% url 'vehicleapp:view_profile' %}">User: {{ user.get_username }}</a></li>
-        <li><a href="{% url 'vehicleapp:logout' %}?next={{request.path}}">Logout</a></li>   
+        <li><a href="{% url 'home' %}">Home</a></li>        
+        <li><a href="{% url 'about' %}">About</a></li>
+        
+                <li><a href="{% url 'get_chart' %}?next={{request.path}}">Chart</a></li>
+                {% if user.is_authenticated %}
+               <li><a href="{% url 'register_vehicle' %}">RegisterVehicle</a></li> 
+               <li><a href="{% url 'edit_profile' %}">EditProlie</a></li>
+                    
+        <li><a href="{% url 'view_profile' %}">User: {{ user.get_username }}</a></li>
+        <li><a href="{% url 'logout' %}?next={{request.path}}">Logout</a></li>   
         {% else %}
-        <li><a href="{% url 'vehicleapp:create_account' %}">Register</a></li>
-        <li><a href="{% url 'vehicleapp:login' %}?next={{request.path}}">Login</a></li>   
+        <li><a href="{% url 'create_account' %}">Register</a></li>
+        <li><a href="{% url 'login' %}?next={{request.path}}">Login</a></li>
+        
         {% endif %}       
         
       </ul>

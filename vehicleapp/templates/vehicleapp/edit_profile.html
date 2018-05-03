@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Registration</title>
+{% endblock %}
+
+{% block section_slider %}
+
+{% endblock %}
+
+{% block section_services %}
+<div id="container">
+        <p>
+        <h1>Edit User Account</h1>
+        <hr>
+        </p>
+    
+    <form action="{% url 'edit_profile' %}" method="post">
+        {% csrf_token %}
+       
+        {{ form.as_p}}
+        <button type="submit">Submit Changes</button>
+    </form>
+    <hr>
+    </div>
+
+{% endblock %}
+
+
+{% block one_quarter %}
+
+
+
+{% endblock %}

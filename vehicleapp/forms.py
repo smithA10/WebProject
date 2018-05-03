@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm,UserChangeForm
 from vehicleapp.models import VehicleDetail
 
 class RegistrationForm(UserCreationForm):
@@ -31,13 +31,21 @@ class RegistrationForm(UserCreationForm):
 
         return user
 
-
-
-
 class VehicleRegistrationForm(forms.ModelForm):
  
     class Meta:
         model = VehicleDetail
         exclude = ['owner']
 
+class EditProfileForm(UserChangeForm):
+    class Meta:
+        model = User
+        
+        fields = (
+            'username',
+            'first_name',
+            'last_name',
+            'email',
+            'password',
+        )
    
