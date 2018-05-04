@@ -25,8 +25,9 @@
       <ul> 
         <li><a href="{% url 'home' %}">Home</a></li>        
         <li><a href="{% url 'about' %}">About</a></li>
-        
+                {%if user.is_superuser %}
                 <li><a href="{% url 'get_chart' %}?next={{request.path}}">Chart</a></li>
+                {% endif %}
                 {% if user.is_authenticated %}
                <li><a href="{% url 'register_vehicle' %}">RegisterVehicle</a></li> 
                <li><a href="{% url 'edit_profile' %}">EditProlie</a></li>
