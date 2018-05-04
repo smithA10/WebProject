@@ -1,0 +1,46 @@
+Aaron Smith-811004676
+
+Perform DELETE,GET,POST
+
+http://127.0.0.1:8000/vehicleapp/api/vehicledetail/detail/
+
+Create a PUT request
+http://127.0.0.1:8000/vehicleapp/edit-profile
+
+Create a POST request
+http://127.0.0.1:8000/vehicleapp/registeration
+http://127.0.0.1:8000/vehicleapp/create_accouunt
+
+Create a GET request
+http://127.0.0.1:8000/vehicleapp/charts(logged in as admin)
+http://127.0.0.1:8000/vehicleapp/profile
+
+Authenticate two methods
+views.py edit_profile and register vehicle
+
+Two parameters from client (forms)
+
+connected to psql database(may have to install)
+
+Insert data into database-
+run python manage.py < shell getallmakes.json
+
+Read data from database-
+Hyperlink user on website
+
+Deploy cloude base solution-
+https://limitless-ocean-10450.herokuapp.com/vehicleapp/home
+
+database online and accessible-
+https://dataclips.heroku.com/nigmjxuamlhtohiaxltejxnaywup-ownprofile
+
+data visualization-
+logged in as admin check chart
+ajax implemenatiion chart.html template
+
+CS topic-
+Check Documentation
+
+IO problem check documentation
+
+

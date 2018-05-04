@@ -20,7 +20,7 @@ urlpatterns = [
     path('vehicle-registration/', views.register_vehicle, name='register_vehicle'),
     path('about/', views.about, name='about'),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    path('api/', include(router.urls)),
+    path('chart/api/', include(router.urls)),
     path('chart/',views.get_chart,name="get_chart"),
     #path('listing/offset/(?P<offset>\d+)/limit/(?P<limit>\d+)/', views.get_vehiclemake_range,name="makelist")
     #path('snippets/', views.vehiclemake_list),
