@@ -2,7 +2,7 @@ Aaron Smith-811004676
 
 Perform DELETE,GET,POST
 
-http://127.0.0.1:8000/vehicleapp/api/vehicledetail/detail/
+http://127.0.0.1:8000/vehicleapp/chart/api/vehicledetail/detail/
 
 Create a PUT request
 http://127.0.0.1:8000/vehicleapp/edit-profile
