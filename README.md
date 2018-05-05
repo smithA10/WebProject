@@ -15,7 +15,7 @@ This library provides:
 
 Django 2.0 is targeted (see Pipfile)
 
-Using Django-Heroku
+Django
 ----------------------
 Running Locally:
 - Download the file Webproject:
